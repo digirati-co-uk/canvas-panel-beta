@@ -36,3 +36,5 @@ export const Manifest: RenderComponent<
     </ManifestProvider>
   );
 };
+
+export default Manifest;

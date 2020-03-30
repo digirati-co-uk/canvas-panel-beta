@@ -81,3 +81,5 @@ CanvasProvider.nextCanvas = () => {
 CanvasProvider.prevCanvas = () => {
   return { type: CanvasProvider.PREV_CANVAS };
 };
+
+export default CanvasProvider;

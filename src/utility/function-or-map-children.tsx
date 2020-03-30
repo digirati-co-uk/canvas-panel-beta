@@ -3,7 +3,7 @@ import { isFunction } from './is-function';
 
 export type MapChildrenType<T> = ReactNode | ((props: T) => ReactNode);
 
-export type RenderComponent<R, T = {}> = React.FC<
+export type RenderComponent<R = {}, T = {}> = React.FC<
   T & { children: MapChildrenType<R> }
 >;
 
