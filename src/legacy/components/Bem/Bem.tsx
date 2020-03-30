@@ -29,6 +29,28 @@ type Context = {
 
 const [useBem, BemContextProvider] = createContext<Context>(defaultContext);
 
+export type SetDifference<A, B> = A extends B ? never : A;
+
+export type SetComplement<A, A1 extends A> = SetDifference<A, A1>;
+
+export type Subtract<T extends T1, T1 extends object> = Pick<
+  T,
+  SetComplement<keyof T, keyof T1>
+>;
+
+type WithBemProps = { bem: BemBlockType & string };
+
+export const withBemClass = (className: string) => <P extends WithBemProps>(
+  Component: React.ComponentType<P>
+) => {
+  const WithBemClass: React.FC<Subtract<P, WithBemProps>> = props => {
+    const bem = useBemClassName(className);
+    return <Component {...(props as P)} bem={bem} />;
+  };
+
+  return WithBemClass;
+};
+
 const Bem: React.FC<Partial<Context>> = ({
   children,
   prefix = '',

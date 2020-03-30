@@ -2,7 +2,7 @@
 // Ported.
 import Manifest from './manifesto/Manifest/Manifest';
 import Annotation from './components/Annotation/Annotation';
-import Bem, { useBemClassName } from './components/Bem/Bem';
+import Bem, { useBemClassName, withBemClass } from './components/Bem/Bem';
 import AnnotationListProvider from './manifesto/AnnotationListProvider/AnnotationListProvider';
 import AnnotationProvider from './manifesto/AnnotationProvider/AnnotationProvider';
 import CanvasProvider from './manifesto/CanvasProvider/CanvasProvider';
@@ -30,12 +30,6 @@ const StaticImageViewport = require('@canvas-panel/core/es/viewers/StaticImageVi
 const Viewport = require('@canvas-panel/core/es/viewers/Viewport/Viewport').default;
 const htmlElementObserver = require('@canvas-panel/core/es/utility/htmlElementObserver').default;
 const Responsive = require('@canvas-panel/core/es/utility/Responsive').default;
-
-function withBemClass() {
-  throw new Error(
-    `with BEM Class removed, it has been replaced with useBemClassName('name') hook`
-  );
-}
 
 export {
   // Components.
