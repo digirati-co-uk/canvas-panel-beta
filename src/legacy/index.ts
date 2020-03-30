@@ -12,6 +12,7 @@ import parseSelectorTarget from '../utility/parse-target-selector';
 import CanvasRepresentation from './components/CanvasRepresentation/CanvasRepresentation';
 import functionOrMapChildren from '../utility/function-or-map-children';
 import { AnnotationSelector } from '../utility/annotation-selector';
+import RangeNavigationProvider from './manifesto/RangeNavigationProvider/RangeNavigationProvider';
 
 // Previous, untyped, still @todo.
 const AnnotationCanvasRepresentation = require('@canvas-panel/core/es/components/AnnotationCanvasRepresentation/AnnotationCanvasRepresentation').default;
@@ -21,7 +22,6 @@ const EditableAnnotation = require('@canvas-panel/core/es/components/EditableAnn
 const Fullscreen = require('@canvas-panel/core/es/components/Fullscreen/Fullscreen').default;
 const ObservableElement = require('@canvas-panel/core/es/components/ObservableElement/ObservableElement').default;
 const LocaleString = require('@canvas-panel/core/es/manifesto/LocaleString/LocaleString').default;
-const RangeNavigationProvider = require('@canvas-panel/core/es/manifesto/RangeNavigationProvider/RangeNavigationProvider').default;
 const FullPageViewport = require('@canvas-panel/core/es/viewers/FullPageViewport/FullPageViewport').default;
 const OpenSeadragonViewer = require('@canvas-panel/core/es/viewers/OpenSeadragonViewer/OpenSeadragonViewer').default;
 const OpenSeadragonViewport = require('@canvas-panel/core/es/viewers/OpenSeadragonViewport/OpenSeadragonViewport').default;

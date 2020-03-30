@@ -12,12 +12,15 @@ export const SingleTileSource: RenderComponent<
     canvas: Canvas;
   },
   {
+    canvas?: Canvas | null;
     preLoad?: (props: any) => void;
     fallbackWidth?: number;
   }
 > = allProps => {
   const { preLoad, fallbackWidth, children, ...props } = allProps;
-  const { canvas } = useCanvas();
+  const ctxCanvas = useCanvas();
+  const canvas = (props.canvas ? props.canvas : ctxCanvas.canvas) as Canvas;
+
   const [imageUri, setImageUri] = useState<string | null>();
   const [tileSources, setTileSources] = useState<any[] | undefined>();
 
@@ -55,7 +58,7 @@ export const SingleTileSource: RenderComponent<
       imageUri,
       tileSources,
       ...props,
-    });
+    } as any);
   }
 
   if (preLoad) {
