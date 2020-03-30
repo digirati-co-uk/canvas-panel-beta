@@ -14,14 +14,22 @@ export function useAnnotationLists() {
 
   useEffect(() => {
     if (canvas) {
-      setExternalAnnotationLists([]);
-      canvas.getOtherContent().then(content => {
-        setExternalAnnotationLists(content);
-      });
-
       setEmbeddedAnnotationLists([]);
       getAnnotationsFromCanvas(canvas).then(annotations => {
-        setEmbeddedAnnotationLists(annotations);
+        if (annotations.length === 0) {
+          setExternalAnnotationLists([]);
+          canvas
+            .getOtherContent()
+            .then(content => {
+              setExternalAnnotationLists(content);
+            })
+            .catch(err => {
+              console.log('Could not find annotations.');
+              console.log(err);
+            });
+        } else {
+          setEmbeddedAnnotationLists(annotations);
+        }
       });
     }
   }, [canvas]);
