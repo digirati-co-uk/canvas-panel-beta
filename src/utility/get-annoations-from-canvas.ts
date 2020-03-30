@@ -1,4 +1,4 @@
-import {AnnotationList, Canvas} from 'manifesto.js';
+import { AnnotationList, Canvas } from 'manifesto.js';
 
 export async function getAnnotationsFromCanvas(canvas: Canvas) {
   const annotationProperty = canvas.getProperty('annotations');
@@ -10,16 +10,14 @@ export async function getAnnotationsFromCanvas(canvas: Canvas) {
     ? annotationProperty
     : [annotationProperty];
 
-  const annotationPromises: Promise<AnnotationList>[] = annotations
-    .map(
-      (annotationList, i) =>
-        new AnnotationList(
-          annotationList.label || `Annotation list ${i}`,
-          annotationList,
-          canvas.options
-        )
-    )
-    .map(annotationList => annotationList.load());
+  const annotationPromises: AnnotationList[] = annotations.map(
+    (annotationList, i) =>
+      new AnnotationList(
+        annotationList.label || `Annotation list ${i}`,
+        annotationList,
+        canvas.options
+      )
+  );
 
   return Promise.all(annotationPromises);
 }
