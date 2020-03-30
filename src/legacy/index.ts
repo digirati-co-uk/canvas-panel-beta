@@ -13,9 +13,9 @@ import CanvasRepresentation from './components/CanvasRepresentation/CanvasRepres
 import functionOrMapChildren from '../utility/function-or-map-children';
 import { AnnotationSelector } from '../utility/annotation-selector';
 import RangeNavigationProvider from './manifesto/RangeNavigationProvider/RangeNavigationProvider';
+import AnnotationCanvasRepresentation from './components/AnnotationCanvasRepresentation/AnnotationCanvasRepresentation';
 
 // Previous, untyped, still @todo.
-const AnnotationCanvasRepresentation = require('@canvas-panel/core/es/components/AnnotationCanvasRepresentation/AnnotationCanvasRepresentation').default;
 const AnnotationDetail = require('@canvas-panel/core/es/components/AnnotationDetail/AnnotationDetail').default;
 const AnnotationRepresentation = require('@canvas-panel/core/es/components/AnnotationRepresentation/AnnotationRepresentation').default;
 const EditableAnnotation = require('@canvas-panel/core/es/components/EditableAnnotation/EditableAnnotation').default;
