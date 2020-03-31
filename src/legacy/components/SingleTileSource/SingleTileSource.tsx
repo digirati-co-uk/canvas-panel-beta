@@ -39,6 +39,7 @@ export const SingleTileSource: RenderComponent<
             url: imageUri,
           },
         ]);
+        return;
       }
 
       fetch(imageUri)
@@ -49,7 +50,8 @@ export const SingleTileSource: RenderComponent<
     }
   }, [imageUri, tileSources]);
 
-  if (!tileSources) {
+
+  if (!tileSources || tileSources.length === 0) {
     return <React.Fragment />;
   }
 

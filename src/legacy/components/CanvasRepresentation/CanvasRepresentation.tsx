@@ -41,12 +41,30 @@ function processChildStyle(
 }
 
 const CanvasRepresentation: React.FC<{
-  position?: 'relative' | 'absolute';
+  position?: {
+    x: number;
+    y: number;
+    width: number;
+    zoom: number;
+    scale: number;
+    rotation: number;
+  };
+  width?: number;
+  height?: number;
   maxWidth?: number;
   ratio?: number;
   style?: CSSProperties;
-}> = ({ ratio = 1, maxWidth = 500, style, children, ...props }) => {
-  const { canvas, width, height } = useCanvas();
+}> = ({
+  ratio = 1,
+  maxWidth = 500,
+  width = 0,
+  height= 0,
+  style,
+  children,
+  ...props
+}) => {
+  const { canvas } = useCanvas();
+  const { maxHeight, ...extraStyle } = style || {};
 
   return (
     <div
@@ -55,7 +73,8 @@ const CanvasRepresentation: React.FC<{
         height: height * ratio,
         width: width * ratio,
         pointerEvents: 'none',
-        ...style,
+        maxHeight: maxHeight ? (maxHeight as number) / ratio : undefined,
+        ...extraStyle,
       }}
     >
       {React.Children.map(children, child => {
@@ -65,8 +84,12 @@ const CanvasRepresentation: React.FC<{
             child && child.type && child.type === 'div'
               ? {}
               : { canvas, ...props };
+
           return React.cloneElement(child as any, {
-            style: processChildStyle(child, { ratio }),
+            style: processChildStyle(child, {
+              position: props.position,
+              ratio,
+            }),
             ...propsForEl,
           });
         }

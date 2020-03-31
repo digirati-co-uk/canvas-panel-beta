@@ -16,7 +16,7 @@ export const AnnotationListProvider: RenderComponent<
     height?: number;
     width?: number;
   }
-> = ({ children, height, width, ...props }) => {
+> = ({ children, ...props }) => {
   const { canvas } = useCanvas();
   const [annotationLists] = useAnnotationLists();
 
@@ -27,15 +27,13 @@ export const AnnotationListProvider: RenderComponent<
   return (
     <div>
       {annotationLists.map((annotationList, key) => (
-        <div key={key}>
-          <NewAnnotationListProvider annotationList={annotationList}>
-            {functionOrMapChildren(children, {
-              canvas,
-              annotationList,
-              ...props,
-            })}
-          </NewAnnotationListProvider>
-        </div>
+        <NewAnnotationListProvider annotationList={annotationList}>
+          {functionOrMapChildren(children, {
+            canvas,
+            annotationList,
+            ...props,
+          })}
+        </NewAnnotationListProvider>
       ))}
     </div>
   );

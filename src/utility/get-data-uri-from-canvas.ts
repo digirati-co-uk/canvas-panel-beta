@@ -7,13 +7,10 @@ import { getImageServiceFromAnnotation } from './get-image-service-from-annotati
 export default function getDataUriFromCanvas(canvas: Canvas) {
   const p3Images = getP3ImagesFromCanvas(canvas);
 
-  console.log(p3Images);
-
   if (p3Images.length && p3Images[0]) {
     const firstP3Image = p3Images[0];
     const service = getImageServiceFromAnnotation(firstP3Image);
     if (service) {
-      console.log(service);
       return service.getInfoUri();
     }
   }

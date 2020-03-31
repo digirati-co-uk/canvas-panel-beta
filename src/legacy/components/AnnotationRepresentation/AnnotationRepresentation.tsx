@@ -38,7 +38,6 @@ const AnnotationRepresentation: React.FC<Props> = ({
 }) => (
   <CanvasRepresentation {...props}>
     {annotations.map(({ annotation, on }, key) => {
-      console.log(on);
       return typeof on.selector === 'string' ? null : (
         <Annotation
           key={key}

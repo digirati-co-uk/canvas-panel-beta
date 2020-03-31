@@ -41,8 +41,6 @@ export const Annotation: React.FC<Props> = props => {
     annotationContent,
   } = props;
 
-  console.log({x,y,width,height})
-
   const bem = useBemClassName('annotation');
   const modifiers = bemModifiers ? bemModifiers(annotation, props) : null;
 
