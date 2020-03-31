@@ -25,7 +25,7 @@ export const AnnotationListProvider: RenderComponent<
   }
 
   return (
-    <div>
+    <>
       {annotationLists.map((annotationList, key) => (
         <NewAnnotationListProvider annotationList={annotationList}>
           {functionOrMapChildren(children, {
@@ -35,7 +35,7 @@ export const AnnotationListProvider: RenderComponent<
           })}
         </NewAnnotationListProvider>
       ))}
-    </div>
+    </>
   );
 };
 

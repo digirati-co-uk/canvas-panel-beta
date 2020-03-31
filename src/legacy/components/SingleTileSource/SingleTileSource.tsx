@@ -1,4 +1,4 @@
-import { Component, useEffect, useState } from 'react';
+import { Component, useEffect, useState, useRef } from 'react';
 import functionOrMapChildren, {
   RenderComponent,
 } from '../../../utility/function-or-map-children';
@@ -19,11 +19,11 @@ export const SingleTileSource: RenderComponent<
   }
 > = allProps => {
   const { preLoad, fallbackWidth, children, ...props } = allProps;
-  const ctxCanvas = useCanvas();
-  const canvas = (props.canvas ? props.canvas : ctxCanvas.canvas) as Canvas;
+  const { canvas } = useCanvas();
 
   const [imageUri, setImageUri] = useState<string | null>();
   const [tileSources, setTileSources] = useState<any[] | undefined>();
+  const requestedId = useRef<string>();
 
   useEffect(() => {
     setImageUri(getDataUriFromCanvas(canvas));
@@ -42,14 +42,18 @@ export const SingleTileSource: RenderComponent<
         return;
       }
 
+      requestedId.current = imageUri;
       fetch(imageUri)
         .then(resp => resp.json())
-        .then(tileSource => setTileSources([tileSource]));
+        .then(tileSource => {
+          if (requestedId.current === imageUri) {
+            setTileSources([tileSource]);
+          }
+        });
 
       return;
     }
   }, [imageUri, tileSources]);
-
 
   if (!tileSources || tileSources.length === 0) {
     return <React.Fragment />;

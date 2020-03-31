@@ -248,7 +248,7 @@ class RangeNavigationProvider extends Component<Props, State> {
     const region = regionList.length !== 0 ? regionList[currentIndex] : null;
 
     return (
-      <CanvasProvider currentCanvas={currentIndex}>
+      <CanvasProvider currentCanvas={canvas ? canvas.id : undefined}>
         {functionOrMapChildren(children, {
           ...props,
           nextRange: this.nextRange,
