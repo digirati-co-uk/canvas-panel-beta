@@ -25,6 +25,6 @@ export default function getDataUriFromCanvas(canvas: Canvas) {
   if (service) {
     return service.getInfoUri();
   }
-  // return the canvas id.
-  return canvas.id;
+
+  return null;
 }

@@ -58,7 +58,7 @@ const CanvasRepresentation: React.FC<{
   ratio = 1,
   maxWidth = 500,
   width = 0,
-  height= 0,
+  height = 0,
   style,
   children,
   ...props

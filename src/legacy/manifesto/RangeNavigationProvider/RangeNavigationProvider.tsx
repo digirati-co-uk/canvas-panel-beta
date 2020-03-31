@@ -22,6 +22,7 @@ type Props = {
     canvasList: string[];
     region: any;
     currentCanvasId: string | null;
+    manifest: Manifest;
     canvas?: Canvas | null;
   }) => any;
   // For controlled input
@@ -262,7 +263,7 @@ class RangeNavigationProvider extends Component<Props, State> {
           region,
           currentCanvasId: canvas ? canvas.id : null,
           canvas,
-        })}
+        } as any)}
       </CanvasProvider>
     );
   }
