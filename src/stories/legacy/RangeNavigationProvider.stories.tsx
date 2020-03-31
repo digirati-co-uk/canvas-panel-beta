@@ -1,5 +1,5 @@
-import Manifest from '../Manifest/Manifest';
-import RangeNavigationProvider from './RangeNavigationProvider';
+import Manifest from '../../legacy/manifesto/Manifest/Manifest';
+import RangeNavigationProvider from '../../legacy/manifesto/RangeNavigationProvider/RangeNavigationProvider';
 import React from 'react';
 import {
   CanvasRepresentation,
@@ -7,7 +7,7 @@ import {
   OpenSeadragonViewport,
   SingleTileSource,
   Viewport,
-} from '../..';
+} from '../../legacy';
 
 // The range navigation provider allows you to track navigating a manifest based on a
 // range.

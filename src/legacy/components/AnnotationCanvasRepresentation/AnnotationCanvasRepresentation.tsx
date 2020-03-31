@@ -2,15 +2,25 @@ import React, { CSSProperties } from 'react';
 import AnnotationListProvider from '../../manifesto/AnnotationListProvider/AnnotationListProvider';
 import AnnotationProvider from '../../manifesto/AnnotationProvider/AnnotationProvider';
 import { AnnotationRepresentation } from '../../';
-import { AnnotationList, Canvas } from 'manifesto.js';
+import {
+  Annotation,
+  Annotation as ManifestoAnnotation,
+  AnnotationList,
+  Canvas,
+} from 'manifesto.js';
+import { Selector } from '../../../utility/annotation-selector';
 
 export const AnnotationCanvasRepresentation: React.FC<{
+  ratio?: number;
   annotationList?: AnnotationList;
   canvas?: Canvas;
   annotationStyle?: CSSProperties;
-  onClickAnnotation: (annotation: any) => void;
+  onClickAnnotation: (annotation: Annotation, bounds: Selector) => void;
   growthStyle: 'fixed' | 'scaled' | 'absolute';
-  bemModifiers: any;
+  bemModifiers?: (
+    annotation: ManifestoAnnotation,
+    props: any
+  ) => { [key: string]: boolean };
 }> = ({
   annotationStyle,
   onClickAnnotation,
@@ -31,6 +41,5 @@ export const AnnotationCanvasRepresentation: React.FC<{
     </AnnotationListProvider>
   );
 };
-
 
 export default AnnotationCanvasRepresentation;

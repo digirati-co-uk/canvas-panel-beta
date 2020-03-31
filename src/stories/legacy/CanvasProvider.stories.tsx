@@ -1,5 +1,5 @@
-import { CanvasProvider } from './CanvasProvider';
-import { Manifest } from '../Manifest/Manifest';
+import { CanvasProvider } from '../../legacy/manifesto/CanvasProvider/CanvasProvider';
+import { Manifest } from '../../legacy/manifesto/Manifest/Manifest';
 // @ts-ignore
 import { CanvasNavigation, LocaleString } from '@canvas-panel/core';
 import React from 'react';

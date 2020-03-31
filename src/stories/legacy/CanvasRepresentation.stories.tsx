@@ -1,7 +1,7 @@
 import React from 'react';
-import { Manifest } from '../../manifesto/Manifest/Manifest';
-import CanvasProvider from '../../manifesto/CanvasProvider/CanvasProvider';
-import CanvasRepresentation from './CanvasRepresentation';
+import { Manifest } from '../../legacy/manifesto/Manifest/Manifest';
+import CanvasProvider from '../../legacy/manifesto/CanvasProvider/CanvasProvider';
+import CanvasRepresentation from '../../legacy/components/CanvasRepresentation/CanvasRepresentation';
 
 export default { title: 'Legacy | Canvas representation' };
 

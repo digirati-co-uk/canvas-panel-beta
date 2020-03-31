@@ -1,8 +1,5 @@
-import React from 'react';
-import CanvasNavigation from '../CanvasNavigation/CanvasNavigation';
-import Bem from './Bem';
-import { CanvasProvider } from '../../manifesto/CanvasProvider/CanvasProvider';
-import { Manifest } from '../../manifesto/Manifest/Manifest';
+import * as React from 'react';
+import { Manifest, CanvasProvider, CanvasNavigation, Bem } from '../../legacy';
 
 export default { title: 'Legacy | BEM' };
 

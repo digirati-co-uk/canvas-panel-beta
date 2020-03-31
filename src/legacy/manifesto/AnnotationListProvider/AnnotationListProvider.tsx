@@ -7,10 +7,16 @@ import { useAnnotationLists } from '../../../hooks/use-annotation-lists';
 import { AnnotationList, Canvas } from 'manifesto.js';
 import { AnnotationListProvider as NewAnnotationListProvider } from '../../../manifesto/AnnotationList/AnnotationListProvider';
 
-export const AnnotationListProvider: RenderComponent<{
-  annotationList: AnnotationList;
-  canvas: Canvas;
-}> = ({ children, ...props }) => {
+export const AnnotationListProvider: RenderComponent<
+  {
+    annotationList: AnnotationList;
+    canvas: Canvas;
+  },
+  {
+    height?: number;
+    width?: number;
+  }
+> = ({ children, height, width, ...props }) => {
   const { canvas } = useCanvas();
   const [annotationLists] = useAnnotationLists();
 

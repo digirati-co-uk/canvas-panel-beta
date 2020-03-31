@@ -1,7 +1,7 @@
 import React from 'react';
-import { Manifest } from '../Manifest/Manifest';
-import { CanvasProvider } from '../CanvasProvider/CanvasProvider';
-import { AnnotationListProvider } from './AnnotationListProvider';
+import { Manifest } from '../../legacy/manifesto/Manifest/Manifest';
+import { CanvasProvider } from '../../legacy/manifesto/CanvasProvider/CanvasProvider';
+import { AnnotationListProvider } from '../../legacy/manifesto/AnnotationListProvider/AnnotationListProvider';
 
 export default { title: 'Legacy | Annotation List Provider' };
 

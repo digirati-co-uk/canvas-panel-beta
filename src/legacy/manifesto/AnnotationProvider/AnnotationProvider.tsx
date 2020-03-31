@@ -34,9 +34,9 @@ export const AnnotationProvider: RenderComponent<{
   }
 
   return functionOrMapChildren(children, {
+    ...props,
     annotationList,
     annotations: parsedList,
-    ...props,
   });
 };
 

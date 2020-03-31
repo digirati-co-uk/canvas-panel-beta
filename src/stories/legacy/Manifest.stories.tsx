@@ -1,9 +1,9 @@
 import React from 'react';
-import { Manifest } from './Manifest';
+import { Manifest } from '../../legacy/manifesto/Manifest/Manifest';
 import {
   ManifestProvider,
   useManifest,
-} from '../../../manifesto/Manifest/ManifestProvider';
+} from '../../manifesto/Manifest/ManifestProvider';
 
 export default { title: 'Legacy | Manifest' };
 

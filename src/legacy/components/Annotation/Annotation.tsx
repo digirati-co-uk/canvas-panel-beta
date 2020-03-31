@@ -1,4 +1,4 @@
-import React, { StyleHTMLAttributes, useCallback } from 'react';
+import React, {CSSProperties, StyleHTMLAttributes, useCallback} from 'react';
 import { BemBlockType, useBemClassName } from '../Bem/Bem';
 import { Annotation as ManifestoAnnotation } from 'manifesto.js';
 
@@ -11,12 +11,13 @@ type Vector = {
 
 type Props = Vector & {
   annotation: ManifestoAnnotation;
-  style: StyleHTMLAttributes<HTMLElement>;
-  annotationContent: (
+  style?: CSSProperties;
+  growthStyle?: 'fixed' | 'scaled' | 'absolute';
+  annotationContent?: (
     annotation: ManifestoAnnotation,
     bem: BemBlockType
   ) => any;
-  bemModifiers: (
+  bemModifiers?: (
     annotation: ManifestoAnnotation,
     props: Props
   ) => { [key: string]: boolean };
@@ -39,6 +40,9 @@ export const Annotation: React.FC<Props> = props => {
     annotation,
     annotationContent,
   } = props;
+
+  console.log({x,y,width,height})
+
   const bem = useBemClassName('annotation');
   const modifiers = bemModifiers ? bemModifiers(annotation, props) : null;
 

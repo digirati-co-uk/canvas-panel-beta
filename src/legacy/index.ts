@@ -14,10 +14,10 @@ import functionOrMapChildren from '../utility/function-or-map-children';
 import { AnnotationSelector } from '../utility/annotation-selector';
 import RangeNavigationProvider from './manifesto/RangeNavigationProvider/RangeNavigationProvider';
 import AnnotationCanvasRepresentation from './components/AnnotationCanvasRepresentation/AnnotationCanvasRepresentation';
+import AnnotationRepresentation from './components/AnnotationRepresentation/AnnotationRepresentation';
 
 // Previous, untyped, still @todo.
 const AnnotationDetail = require('@canvas-panel/core/es/components/AnnotationDetail/AnnotationDetail').default;
-const AnnotationRepresentation = require('@canvas-panel/core/es/components/AnnotationRepresentation/AnnotationRepresentation').default;
 const EditableAnnotation = require('@canvas-panel/core/es/components/EditableAnnotation/EditableAnnotation').default;
 const Fullscreen = require('@canvas-panel/core/es/components/Fullscreen/Fullscreen').default;
 const ObservableElement = require('@canvas-panel/core/es/components/ObservableElement/ObservableElement').default;

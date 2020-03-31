@@ -1,9 +1,9 @@
-import { Manifest } from '../../manifesto/Manifest/Manifest';
+import { Manifest } from '../../legacy/manifesto/Manifest/Manifest';
 import React from 'react';
-import CanvasProvider from '../../manifesto/CanvasProvider/CanvasProvider';
-import { OpenSeadragonViewer, Viewport, OpenSeadragonViewport } from '../..';
-import SingleTileSource from '../../components/SingleTileSource/SingleTileSource';
-import CanvasRepresentation from '../../components/CanvasRepresentation/CanvasRepresentation';
+import CanvasProvider from '../../legacy/manifesto/CanvasProvider/CanvasProvider';
+import { OpenSeadragonViewer, Viewport, OpenSeadragonViewport } from '../../legacy';
+import SingleTileSource from '../../legacy/components/SingleTileSource/SingleTileSource';
+import CanvasRepresentation from '../../legacy/components/CanvasRepresentation/CanvasRepresentation';
 
 export default { title: 'Legacy | OpenSeadragon Viewer' };
 
