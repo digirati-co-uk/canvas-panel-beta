@@ -4,8 +4,8 @@ import { withBemClass, BemBlockType } from '../Bem/Bem';
 
 type Props = {
   annotation: Manifesto.Annotation;
-  onClose: (e: any) => void;
-  closeText: string;
+  onClose?: (e: any) => void;
+  closeText?: string;
   bem: BemBlockType & string;
 };
 
