@@ -2,7 +2,7 @@ import { Canvas, Manifest, Range } from 'manifesto.js';
 import React, { Component } from 'react';
 import functionOrMapChildren from '../../../utility/function-or-map-children';
 import extractCanvasAndRegionsFromRange from '../../../utility/extractCanvasAndRegionsFromRange';
-import { CanvasProvider } from '../..';
+import CanvasProvider from '../CanvasProvider/CanvasProvider';
 
 type Props = {
   manifest?: Manifest;

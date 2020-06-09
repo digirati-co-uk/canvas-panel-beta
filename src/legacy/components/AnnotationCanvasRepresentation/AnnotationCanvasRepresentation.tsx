@@ -1,7 +1,7 @@
 import React, { CSSProperties } from 'react';
 import AnnotationListProvider from '../../manifesto/AnnotationListProvider/AnnotationListProvider';
 import AnnotationProvider from '../../manifesto/AnnotationProvider/AnnotationProvider';
-import { AnnotationRepresentation } from '../../';
+import AnnotationRepresentation from '../AnnotationRepresentation/AnnotationRepresentation';
 import {
   Annotation,
   Annotation as ManifestoAnnotation,

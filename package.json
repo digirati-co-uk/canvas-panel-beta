@@ -3,24 +3,25 @@
   "version": "1.1.2",
   "license": "MIT",
   "files": [
-    "dist",
-    "lib"
+    "dist"
   ],
-  "main": "dist/umd/fesk-ts.js",
-  "module": "lib/index.js",
-  "typings": "lib/index.d.ts",
-  "author": "Stephen Fraser <stephen.fraser@digirati.com>",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "web": "dist/index.umd.js",
+  "typings": "dist/types/index.d.ts",
   "scripts": {
-    "build": "fesk-build --cjs --umd && tsc -p ./ --emitDeclarationOnly",
-    "start": "fesk-start --cjs",
-    "build-types": "tsc -p ./ --emitDeclarationOnly",
+    "build": "rollup -c && tsc -p ./tsconfig.types.json",
+    "start": "rollup -c --watch",
     "test": "jest",
-    "prepare": "NODE_ENV=production fesk-build --cjs --umd && tsc -p ./ --emitDeclarationOnly"
+    "build-types": "tsc -p ./tsconfig.types.json",
+    "prepare": "NODE_ENV=production rollup -c && tsc -p ./tsconfig.types.json",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
-    "@fesk/babel-config": "^1.3.0-next.2945936d",
+    "@ampproject/rollup-plugin-closure-compiler": "0.26.0",
+    "@babel/core": "7.10.2",
     "@fesk/eslint-config-standard": "^1.2.2",
-    "@fesk/scripts": "1.4.0-pr.b1c982eb",
     "@storybook/addon-knobs": "^5.2.4",
     "@types/enzyme": "^3.10.3",
     "@types/jest": "^24.0.9",
@@ -29,6 +30,10 @@
     "@types/react-test-renderer": "^16.9.1",
     "@typescript-eslint/eslint-plugin": "^2.4.0",
     "@typescript-eslint/parser": "^2.4.0",
+    "@rollup/plugin-commonjs": "^12.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^8.0.0",
+    "@rollup/plugin-typescript": "^4.1.2",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
     "eslint-plugin-babel": "^5.3.0",
@@ -36,22 +41,19 @@
     "eslint-plugin-react-hooks": "^2.1.2",
     "jest": "^24.9.0",
     "react-test-renderer": "^16.10.2",
+    "rollup": "^2.13.1",
+    "@rollup/plugin-replace": "2.3.3",
+    "rollup-plugin-terser": "^6.1.0",
+    "rollup-plugin-visualizer": "^4.0.4",
     "sass-loader": "^8.0.0",
     "ts-jest": "^24.1.0",
-    "typescript": "^3.6.3"
-  },
-  "fesk": {
-    "typescript": true,
-    "port": 5000,
-    "metalsmith": {
-      "nunjucks": {
-        "liveServerPort": 35735
-      }
-    }
+    "typescript": "^3.6.3",
+    "@storybook/react": "^5.2.4"
   },
   "dependencies": {
     "@canvas-panel/core": "^0.2.0",
-    "@storybook/react": "^5.2.4",
+    "@iiif/vocabulary": "1.0.16",
+    "@fesk/bem-js": "1.0.1",
     "manifesto.js": "^4.0.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2"

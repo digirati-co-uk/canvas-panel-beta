@@ -1,3 +1,3 @@
-import '@fesk/scripts/lib/scripts/parts/storybook/react/addons';
-
-
+import '@storybook/addon-knobs/register';
+import '@storybook/addon-a11y/register';
+import '@storybook/addon-notes/register';

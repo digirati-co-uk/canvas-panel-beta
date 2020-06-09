@@ -4,3 +4,5 @@ lib
 *.log
 *.tsbuildinfo
 .idea/workspace.xml
+stats.html
+stats.umd.html
