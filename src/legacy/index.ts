@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 // Ported.
-import './openseadragon-node-compatibility';
+require('./openseadragon-node-compatibility');
 import Manifest from './manifesto/Manifest/Manifest';
 import Annotation from './components/Annotation/Annotation';
 import Bem, { useBemClassName, withBemClass } from './components/Bem/Bem';
