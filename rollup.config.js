@@ -53,14 +53,7 @@ export default [
         sourcemap: true,
       },
     ],
-    external: [
-      'crypto',
-      '@canvas-panel/core',
-      '@fesk/bem-js',
-      'manifesto.js',
-      'react',
-      'react-dom',
-    ],
+    external: ['crypto', '@fesk/bem-js', 'manifesto.js', 'react', 'react-dom'],
     plugins: [
       typescript(),
       replace({
