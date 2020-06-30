@@ -1,6 +1,5 @@
 /* eslint-disable prettier/prettier */
 // Ported.
-require('./openseadragon-node-compatibility');
 import Manifest from './manifesto/Manifest/Manifest';
 import Annotation from './components/Annotation/Annotation';
 import Bem, { useBemClassName, withBemClass } from './components/Bem/Bem';
@@ -19,29 +18,29 @@ import AnnotationRepresentation from './components/AnnotationRepresentation/Anno
 import AnnotationDetail from './components/AnnotationDetail/AnnotationDetail';
 
 // Previous, untyped, still @todo.
-const EditableAnnotation = require('@canvas-panel/core/lib/components/EditableAnnotation/EditableAnnotation')
+const EditableAnnotation = require('@canvas-panel/core/es/components/EditableAnnotation/EditableAnnotation')
   .default;
-const Fullscreen = require('@canvas-panel/core/lib/components/Fullscreen/Fullscreen')
+const Fullscreen = require('@canvas-panel/core/es/components/Fullscreen/Fullscreen')
   .default;
-const ObservableElement = require('@canvas-panel/core/lib/components/ObservableElement/ObservableElement')
+const ObservableElement = require('@canvas-panel/core/es/components/ObservableElement/ObservableElement')
   .default;
-const LocaleString = require('@canvas-panel/core/lib/manifesto/LocaleString/LocaleString')
+const LocaleString = require('@canvas-panel/core/es/manifesto/LocaleString/LocaleString')
   .default;
-const FullPageViewport = require('@canvas-panel/core/lib/viewers/FullPageViewport/FullPageViewport')
+const FullPageViewport = require('@canvas-panel/core/es/viewers/FullPageViewport/FullPageViewport')
   .default;
-const OpenSeadragonViewer = require('@canvas-panel/core/lib/viewers/OpenSeadragonViewer/OpenSeadragonViewer')
+const OpenSeadragonViewer = require('@canvas-panel/core/es/viewers/OpenSeadragonViewer/OpenSeadragonViewer')
   .default;
-const OpenSeadragonViewport = require('@canvas-panel/core/lib/viewers/OpenSeadragonViewport/OpenSeadragonViewport')
+const OpenSeadragonViewport = require('@canvas-panel/core/es/viewers/OpenSeadragonViewport/OpenSeadragonViewport')
   .default;
-const SizedViewport = require('@canvas-panel/core/lib/viewers/SizedViewport/SizedViewport')
+const SizedViewport = require('@canvas-panel/core/es/viewers/SizedViewport/SizedViewport')
   .default;
-const StaticImageViewport = require('@canvas-panel/core/lib/viewers/StaticImageViewport/StaticImageViewport')
+const StaticImageViewport = require('@canvas-panel/core/es/viewers/StaticImageViewport/StaticImageViewport')
   .default;
-const Viewport = require('@canvas-panel/core/lib/viewers/Viewport/Viewport')
+const Viewport = require('@canvas-panel/core/es/viewers/Viewport/Viewport')
   .default;
-const htmlElementObserver = require('@canvas-panel/core/lib/utility/htmlElementObserver')
+const htmlElementObserver = require('@canvas-panel/core/es/utility/htmlElementObserver')
   .default;
-const Responsive = require('@canvas-panel/core/lib/utility/Responsive').default;
+const Responsive = require('@canvas-panel/core/es/utility/Responsive').default;
 
 export {
   // Components.

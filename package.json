@@ -54,7 +54,8 @@
     "@canvas-panel/core": "^0.2.0",
     "@iiif/vocabulary": "1.0.16",
     "@fesk/bem-js": "1.0.1",
-    "manifesto.js": "^4.0.0",
+    "manifesto.js": "^4.1.0",
+    "whatwg-fetch": "3.0.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2"
   }

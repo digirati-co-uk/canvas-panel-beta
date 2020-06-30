@@ -18,10 +18,14 @@ export default [
         format: 'umd',
         sourcemap: true,
         globals: {
+          react: 'react',
+          'react-dom': 'ReactDOM',
           'node-fetch': 'fetch',
           'fetch-cookie': 'fetch',
           'whatwg-fetch': 'fetch',
           'manifesto.js': 'Manifesto',
+          '@iiif/manifold': 'Manifold',
+          openseadragon: 'OpenSeadragon',
         },
       },
     ],
@@ -37,9 +41,18 @@ export default [
       compiler(),
       visualizer({ filename: 'stats.umd.html' }),
     ],
-    external: ['node-fetch', 'fetch-cookie', 'whatwg-fetch', 'manifesto.js'],
+    external: [
+      'react',
+      'react-dom',
+      'node-fetch',
+      'fetch-cookie',
+      'whatwg-fetch',
+      'manifesto.js',
+      'openseadragon',
+      '@iiif/manifold',
+    ],
   },
-  {
+  /* {
     input: 'src/index.ts',
     output: [
       {
@@ -53,7 +66,15 @@ export default [
         sourcemap: true,
       },
     ],
-    external: ['crypto', '@fesk/bem-js', 'manifesto.js', 'react', 'react-dom'],
+    external: [
+      'crypto',
+      '@fesk/bem-js',
+      'manifesto.js',
+      'react',
+      'react-dom',
+      'openseadragon',
+      '@iiif/manifold',
+    ],
     plugins: [
       typescript(),
       replace({
@@ -64,5 +85,5 @@ export default [
       json(),
       visualizer(),
     ],
-  },
+  }, */
 ];
